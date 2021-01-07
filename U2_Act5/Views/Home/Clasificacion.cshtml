@@ -1,0 +1,26 @@
+﻿@model IEnumerable<U2_Act5.Models.Clase>
+@{
+    Layout = "_Layout";
+}
+
+@foreach (var c in Model)
+
+{
+    <h1>@c.Nombre</h1>
+
+    <ul class="especies">
+        @foreach (var esp in c.Especies)
+        {
+            <li>
+                <div>
+                    <img src="~/especies/@(esp.Id).jpg">
+                </div>
+                <h2>@esp.Especie</h2>
+                <p><label>Habitat: </label>@esp.Habitat</p>
+                <p><label>Peso: </label>@esp.Peso</p>
+                <p><label>Tamaño: </label>@esp.Tamaño</p>
+                <p>@esp.Observaciones</p>
+            </li>
+        }
+    </ul>
+}
